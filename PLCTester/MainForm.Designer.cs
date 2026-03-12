@@ -56,6 +56,7 @@ namespace PLCTester
             this.btnRead = new System.Windows.Forms.Button();
             this.grpResult = new System.Windows.Forms.GroupBox();
             this.txtResult = new System.Windows.Forms.TextBox();
+            this.btnArrayReader = new System.Windows.Forms.Button();
             this.grpConnection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSlot)).BeginInit();
@@ -203,6 +204,7 @@ namespace PLCTester
             // 
             // grpRead
             // 
+            this.grpRead.Controls.Add(this.btnArrayReader);
             this.grpRead.Controls.Add(this.lblDataType);
             this.grpRead.Controls.Add(this.cmbDataType);
             this.grpRead.Controls.Add(this.lblDb);
@@ -300,7 +302,7 @@ namespace PLCTester
             // btnRead
             // 
             this.btnRead.Enabled = false;
-            this.btnRead.Location = new System.Drawing.Point(450, 57);
+            this.btnRead.Location = new System.Drawing.Point(450, 51);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(100, 40);
             this.btnRead.TabIndex = 8;
@@ -327,6 +329,17 @@ namespace PLCTester
             this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtResult.Size = new System.Drawing.Size(540, 100);
             this.txtResult.TabIndex = 0;
+            // 
+            // btnArrayReader
+            // 
+            this.btnArrayReader.Enabled = false;
+            this.btnArrayReader.Location = new System.Drawing.Point(406, 97);
+            this.btnArrayReader.Name = "btnArrayReader";
+            this.btnArrayReader.Size = new System.Drawing.Size(144, 40);
+            this.btnArrayReader.TabIndex = 11;
+            this.btnArrayReader.Text = "Lettore Array Struct";
+            this.btnArrayReader.UseVisualStyleBackColor = true;
+            this.btnArrayReader.Click += new System.EventHandler(this.btnArrayReader_Click);
             // 
             // MainForm
             // 
@@ -378,5 +391,6 @@ namespace PLCTester
         private System.Windows.Forms.Button btnRead;
         private System.Windows.Forms.GroupBox grpResult;
         private System.Windows.Forms.TextBox txtResult;
+        private Button btnArrayReader;
     }
 }

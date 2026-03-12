@@ -77,6 +77,7 @@ namespace PLCTester
                     btnConnect.Enabled = false;
                     btnDisconnect.Enabled = true;
                     btnRead.Enabled = true;
+                    btnArrayReader.Enabled = true;
 
                     // Disable connection settings
                     cmbCpuType.Enabled = false;
@@ -115,6 +116,7 @@ namespace PLCTester
                 btnConnect.Enabled = true;
                 btnDisconnect.Enabled = false;
                 btnRead.Enabled = false;
+                btnArrayReader.Enabled = false;
 
                 // Enable connection settings
                 cmbCpuType.Enabled = true;
@@ -211,6 +213,19 @@ namespace PLCTester
                 plc.Close();
             }
             base.OnFormClosing(e);
+        }
+
+        private void btnArrayReader_Click(object sender, EventArgs e)
+        {
+            if (plc == null || !plc.IsConnected)
+            {
+                MessageBox.Show("Non connesso al PLC!", "Errore",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ArrayStructReaderForm arrayForm = new ArrayStructReaderForm(plc);
+            arrayForm.ShowDialog();
         }
     }
 }
